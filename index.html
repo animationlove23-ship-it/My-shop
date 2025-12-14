@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<title>Online Shop</title>
+
+<style>
+body { font-family: sans-serif; background:#f2f2f2; padding:10px; }
+.product { background:#fff; padding:15px; margin-bottom:15px; border-radius:8px; }
+input { width:100%; padding:8px; margin:6px 0; }
+button { width:100%; padding:10px; background:#28a745; color:#fff; border:none; border-radius:5px; }
+button:disabled { background:#999; }
+</style>
+</head>
+
+<body>
+
+<h2>🛒 Online Shop</h2>
+
+<div class="product">
+<h3>Product A</h3>
+
+<img src="waveqr.png" width="200"><br><br>
+
+<input type="text" placeholder="Customer Name" class="name">
+<input type="tel" placeholder="Phone Number" class="phone">
+<input type="text" placeholder="ID (6 လုံး)" maxlength="6" class="id">
+<input type="file" class="receipt" accept="image/*">
+
+<button disabled>Order</button>
+</div>
+
+</body>
+</html>
