@@ -4,32 +4,110 @@
 <meta charset="UTF-8">
 <title>Online Shop</title>
 
-<style>body {
+<style>/* Body */
+body {
   font-family: Arial, sans-serif;
-  font-size: 18px;
+  font-size: 22px;       /* စာအရမ်းကြီး */
   color: #333;
+  padding: 20px;
+  background-color: #f8f8f8;
 }
 
+/* Headings */
 h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
+  font-size: 36px;
+  margin-bottom: 30px;
 }
 
 h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 15px;
 }
 
 p {
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
+/* Images side by side */
 .images {
-  display: flex;           /* side by side */
-  gap: 20px;               /* image ကြား အကွာ */
-  align-items: center;     /*
+  display: flex;
+  gap: 25px;           /* image ကြား အကွာ */
+  align-items: center; /* vertical alignment */
+  margin-bottom: 20px;
+}
 
+.images img {
+  width: 250px;        /* ကြီးအောင် */
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Inputs */
+.inputs {
+  display: flex;
+  flex-direction: column; /* vertical alignment */
+  gap: 20px;             /* input ကြား အကွာ */
+  margin-bottom: 25px;
+}
+
+.input-field {
+  width: 100%;
+  max-width: 500px;     /* အများဆုံး width */
+  padding: 20px;        /* အတွင်း padding ကြီး */
+  font-size: 22px;      /* စာကြီး */
+  border: 2px solid #999;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Button */
+button {
+  font-size: 22px;       /* စာကြီး */
+  padding: 18px 30px;    /* ကြီးအောင် padding */
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Product box spacing */
+.product {
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive (ဖုန်းအတွက်) */
+@media (max-width: 600px) {
+  .images {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .images img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .input-field {
+    max-width: 100%;
+    font-size: 20px;
+    padding: 18px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 20px
 
 </style>
 </head>
