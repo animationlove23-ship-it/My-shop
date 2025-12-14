@@ -3,6 +3,54 @@ function order(product, btn){
   let name = box.querySelector(".name").value;
   let phone = box.querySelector(".phone").value;
   let id = box.querySelector(".id").value;
+  let receiptFile = box.querySelector(".receipt").files[0];
+
+  if(name=="" || phone=="" || id.length!=6){
+    alert("အချက်အလက် ပြည့်စုံအောင်ဖြည့်ပါ");
+    return;
+  }
+
+  let msg = `
+🛒 New Order
+📦 Product: ${product}
+👤 Name: ${name}
+📞 Phone: ${phone}
+🆔 ID: ${id}
+`;
+
+  // Telegram ပို့
+  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{
+    method:"POST",
+    headers:{ "Content-Type":"application/json" },
+    body: JSON.stringify({
+      chat_id: CHAT_ID,
+      text: msg
+    })
+  }).then(()=>{
+    // Receipt file ပို့ရန်
+    if(receiptFile){
+      let formData = new FormData();
+      formData.append("chat_id", CHAT_ID);
+      formData.append("photo", receiptFile);
+
+      fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {
+        method:"POST",
+        body: formData
+      }).then(()=>{
+        alert("Order + Receipt တင်ပြီး ✅");
+        btn.disabled = true;
+      });
+    } else {
+      alert("Order တင်ပြီး ✅");
+      btn.disabled = true;
+    }
+  });
+}
+function order(product, btn){
+  let box = btn.parentElement;
+  let name = box.querySelector(".name").value;
+  let phone = box.querySelector(".phone").value;
+  let id = box.querySelector(".id").value;
 
   if(name=="" || phone=="" || id.length!=6){
     alert("အချက်အလက် ပြည့်စုံအောင်ဖြည့်ပါ");
