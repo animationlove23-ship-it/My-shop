@@ -1,4 +1,5 @@
-function order(product, btn){
+const BOT_TOKEN = "8547070631:AAHTelacoZo4u0po3iiwxkNM0BvD1wbNCys";
+const CHAT_ID = "7549405923";function order(product, btn){
   let box = btn.parentElement;
   let name = box.querySelector(".name").value;
   let phone = box.querySelector(".phone").value;
